@@ -3,6 +3,16 @@ $dark-color: #343a40;
 $light-color: #f4f4f4;
 $danger-color: #dc3545;
 $success-color: #28a745;
+
+$color-map: (
+  "primary" $primary-color,
+  "dark" $dark-color,
+  "light" $light-color,
+  "danger" $danger-color,
+  "success" $success-color,
+  "whitee" #fff
+);
+
 $max-width: 1100px;
 
 // Set text color based on background

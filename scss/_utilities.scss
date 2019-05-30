@@ -1,23 +1,64 @@
+// Text Styles
+%space {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.x-large {
+  font-size: 4rem;
+  @extend %space;
+}
+
+.large {
+  font-size: 3rem;
+  @extend %space;
+}
+
+.lead {
+  font-size: 1.5rem;
+  @extend %space;
+}
+
 // Backgrounds
-.bg {
-  &-primary {
-    @include set-background($primary-color);
+@each $name, $color in $color-map {
+  @if($name == light or $name == whitee) {
+    .bg-#{$name} {
+      @include set-background($color);
+      border: 1px solid #ccc;
+    }
+  } @else {
+    .bg-#{$name} {
+      @include set-background($color);
+    }
   }
-  &-light {
-    @include set-background($light-color);
-    border: 1px solid #ccc;
+}
+
+.dark-overlay {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+// Buttons
+.btn {
+  background-color: $light-color;
+  padding: 0.4rem 1.3rem;
+  margin-right: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    background-color: lighten($dark-color, 20%);
+    color: #fff;
   }
-  &-dark {
-    @include set-background($dark-color);
-  }
-  &-success {
-    @include set-background($success-color);
-  }
-  &-danger {
-    @include set-background($danger-color);
-  }
-  &-white {
-    @include set-background(#fff);
-    border: 1px solid #ccc;
+
+  @each $name, $color in $color-map {
+    &-#{$name} {
+      @include set-background($color);
+      
+      &:hover {
+        background-color: lighten($color, 5%);
+      }
+    }
   }
 }
