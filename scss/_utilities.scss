@@ -1,3 +1,13 @@
+// Container
+.container {
+  max-width: $max-width;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
 // Text Styles
 %space {
   line-height: 1.2;
@@ -19,6 +29,10 @@
   @extend %space;
 }
 
+.text-primary {
+  color: $primary-color;
+}
+
 // Backgrounds
 @each $name, $color in $color-map {
   @if($name == light or $name == whitee) {
@@ -35,6 +49,10 @@
 
 .dark-overlay {
   height: 100%;
+  // width: 100%;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -46,6 +64,10 @@
   color: #333;
   font-size: 1rem;
   transition: all 0.2s ease-in;
+  border: none;
+  cursor: pointer;
+  // display: inline-block;
+  // outline: none;
 
   &:hover {
     background-color: lighten($dark-color, 20%);
@@ -59,6 +81,21 @@
       &:hover {
         background-color: lighten($color, 5%);
       }
+    }
+  }
+}
+
+// Alerts
+.alert {
+  padding: 0.8rem;
+  margin: 1rem;
+  opacity: 0.9;
+  background: $light-color;
+  color: #333;
+
+  @each $name, $color in $color-map {
+    &-#{$name} {
+      @include set-background($color);
     }
   }
 }
