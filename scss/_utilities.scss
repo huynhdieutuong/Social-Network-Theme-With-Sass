@@ -33,6 +33,16 @@
   color: $primary-color;
 }
 
+.round-img {
+  border-radius: 50%;
+}
+
+.line {
+  height: 1px;
+  background: #ccc;
+  margin: 1.5rem 0;
+}
+
 // Backgrounds
 @each $name, $color in $color-map {
   @if($name == light or $name == whitee) {
@@ -90,6 +100,22 @@
   padding: 0.8rem;
   margin: 1rem;
   opacity: 0.9;
+  background: $light-color;
+  color: #333;
+
+  @each $name, $color in $color-map {
+    &-#{$name} {
+      @include set-background($color);
+    }
+  }
+}
+
+// Badges
+.badge {
+  font-size: 0.8rem;
+  padding: 0.1rem;
+  text-align: center;
+  margin: 0.3rem;
   background: $light-color;
   color: #333;
 
