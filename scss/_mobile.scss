@@ -1,0 +1,77 @@
+@media (max-width: 700px) {
+  .hide-sm {
+    display: none;
+  }
+
+  .container {
+    margin-top: 7rem;
+  }
+
+  // Text Styles
+  .x-large {
+    font-size: 3rem;
+  }
+
+  .large {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  // Navbar
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Dashboard
+  .dash-buttons {
+    display: flex;
+    flex-direction: column;
+    
+    .btn {
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  // Profiles
+  .profile {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+
+    img {
+      width: 80%;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+  
+  .profile-grid {
+    display: flex;
+    flex-direction: column;
+
+    .profile-about {
+      .skills {
+        flex-direction: column;
+
+        .p-1 {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  // Posts
+  .post {
+    grid-template-columns: 1fr;
+
+    .btn {
+      padding: 0.4rem 1rem;
+    }
+  }
+}
